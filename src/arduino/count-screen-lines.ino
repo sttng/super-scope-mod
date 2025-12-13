@@ -1,5 +1,5 @@
-const int COMPOSITE_SYNC PIN = 2;
-const int VERTICAL SYNC_PIN = 3;
+const int COMPOSITE_SYNC_PIN = 2;
+const int VERTICAL_SYNC_PIN = 3;
 
 volatile int lineCount = 0;
 volatile int previousLineCount = 0;
