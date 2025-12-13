@@ -24,3 +24,11 @@ void setup() {
 void loop() {
 
 }
+
+void handleCompositeSync() {
+  lineCount++;
+}
+
+void handleVerticalSync() {
+  lineCount = 0;
+}
