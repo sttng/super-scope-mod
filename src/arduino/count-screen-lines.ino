@@ -22,7 +22,7 @@ void setup() {
 }
 
 void loop() {
-
+  Serial.println(lineCount);
 }
 
 void handleCompositeSync() {
