@@ -11,12 +11,12 @@ volatile unsigned long elapsedlineTime = 0;
 volatile int frameCounter = 0;
 volatile bool inVsync = false;
 
-void setup () {
+void setup() {
   Serial.begin(9600);
 
-  pinMode (COMPOSITE_SYNC_PIN, INPUT);
-  pinMode (VERTICAL_ SYNC_PIN, INPUT);
+  pinMode(COMPOSITE_SYNC_PIN, INPUT);
+  pinMode(VERTICAL_ SYNC_PIN, INPUT);
 
-  attachInterrupt (digitalPinToInterrupt (COMPOSITE_SYNC_PIN), handleCompositesync, RISING;
-  attachInterrupt (digitalPinToInterrupt (VERTICAL_SYNC_PIN), handleVerticalsync, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
+  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, CHANGE);
 }
