@@ -70,7 +70,7 @@ void loop() {
   }
 }
 
-void handleCompositesync() {
+void handleCompositeSync() {
   lineCount++;
 
   if (lineCount == aimLine) { 
@@ -81,6 +81,6 @@ void handleCompositesync() {
   }
 }
 
-void handleVerticalsync() {
+void handleVerticalSync() {
   lineCount = 0;
 }
