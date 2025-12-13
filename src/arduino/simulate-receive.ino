@@ -1,7 +1,7 @@
 
 
 
-const int TRIGGER PIN = 8;
+const int TRIGGER_PIN = 8;
 const int CURSOR_PIN = 9;
 const int TURBO_PIN = 10;
 const int PAUSE PIN = 11;
@@ -13,7 +13,7 @@ const int minAimMicroseconds = 5;
 const int maxAimMicroseconds = 55;
 
 volatile int lineCount = 0;
-volatile int aimline = 120; // 10 - 240
+volatile int aimLine = 120; // 10 - 240
 volatile int aimMicroseconds = 27; // 5 - 55
 
 void setup() {
@@ -26,13 +26,13 @@ void setup() {
   pinMode(CURSOR_PIN, OUTPUT);
   pinMode(TURBO_PIN, OUTPUT);
   pinMode(PAUSE_PIN, OUTPUT);
-  pinMode (EXTERNAL_LATCH_PIN, OUTPUT);
+  pinMode(EXTERNAL_LATCH_PIN, OUTPUT);
 
   digitalWrite(TRIGGER_PIN, HIGH);
   digitalWrite(CURSOR_PIN, HIGH);
   digitalWrite(TURBO_PIN, HIGH);
   digitalWrite(PAUSE_PIN, HIGH);
-  digitalWrite (EXTERNAL_LATCH_PIN, HIGH);
+  digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
 
   attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
   attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING) ;
@@ -45,7 +45,7 @@ void loop() {
     switch (inputByte) {
       case 'w': case 'W':
         aimLine -= 40;
-        if (aimLine < minAimLine) aimline = minAimLine;
+        if (aimLine < minAimLine) aimLine = minAimLine;
         break;
       case 'a': case 'A':
         aimMicroseconds -= 10;
@@ -53,7 +53,7 @@ void loop() {
         break;
       case 's': case 'S':
         aimLine += 40;
-        if (aimLine > maxAimLine) aimline = maxAimLine;
+        if (aimLine > maxAimLine) aimLine = maxAimLine;
         break;
       case 'd': case 'D':
         aimMicroseconds += 10;
@@ -70,11 +70,11 @@ void loop() {
   }
 }
 
-void handleCompositesync () {
+void handleCompositesync() {
   lineCount++;
 
   if (lineCount == aimLine) { 
-    delayMicroseconds (aimMicroseconds);
+    delayMicroseconds(aimMicroseconds);
     digitalWrite(EXTERNAL_LATCH_PIN, LOW);
     delayMicroseconds(5);
     digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
