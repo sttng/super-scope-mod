@@ -19,6 +19,9 @@ element14 Community page: https://www.element14.com/community/docs/DOC-95663
 | Infrared Emitter, High Speed, 850 nm, 3 °, T-1 3/4 (5mm), 10 mW/Sr, 10 ns, 10 ns | VISHAY | 4 |
 | LM1881N Video Sync Separator chip | TI | 1 |
 | MC14021BCP 8Bit Shift Register chip | Motorola | 1 |
+| 680k Ohm resistor | | 1 |
+| 0.1 µF ceramic capacitors | | 2 |
+
 
 # Additional Parts
 
