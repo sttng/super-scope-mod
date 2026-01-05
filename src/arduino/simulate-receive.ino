@@ -1,5 +1,5 @@
-
-
+const int COMPOSITE_SYNC_PIN = 2;
+const int VERTICAL_SYNC_PIN = 3;
 
 const int TRIGGER_PIN = 8;
 const int CURSOR_PIN = 9;
