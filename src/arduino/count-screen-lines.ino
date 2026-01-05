@@ -22,7 +22,9 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(lineCount);
+  if (lineCount == 0 && previousLineCount > 15) {
+    Serial.println(previousLineCount);
+  }
 }
 
 void handleCompositeSync() {
@@ -30,5 +32,6 @@ void handleCompositeSync() {
 }
 
 void handleVerticalSync() {
+  previousLineCount = lineCount;
   lineCount = 0;
 }
