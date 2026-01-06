@@ -4,7 +4,7 @@ const int VERTICAL_SYNC_PIN = 3;
 const int TRIGGER_PIN = 8;
 const int CURSOR_PIN = 9;
 const int TURBO_PIN = 10;
-const int PAUSE PIN = 11;
+const int PAUSE_PIN = 11;
 const int EXTERNAL_LATCH_PIN = 12; // Raster gate
 
 const int minAimLine = 10;
@@ -65,7 +65,7 @@ void loop() {
         digitalWrite(TRIGGER_PIN, HIGH);
 
         Serial.println("Trigger pressed.");
-        break:
+        break;
     }
   }
 }
