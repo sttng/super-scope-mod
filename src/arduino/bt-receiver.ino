@@ -1,5 +1,5 @@
 //#include <SoftwareSerial.h>
-#include <NeoSWSerial.h>
+#include <PostNeoSWSerial.h>
 
 const int COMPOSITE_SYNC_PIN = 2;
 const int VERTICAL_SYNC_PIN = 3;
@@ -45,7 +45,7 @@ int aimMicroseconds = (maxAimMicroseconds - minAimMicroseconds + 1) / 2 + minAim
 volatile int currentLine = 0;
 
 //SoftwareSerial bluetoothSerial(BLUETOOTH_RX_PIN, BLUETOOTH_TX_PIN);
-NeoSWSerial bluetoothSerial(BLUETOOTH_RX_PIN, BLUETOOTH_TX_PIN);
+PostNeoSWSerial bluetoothSerial(BLUETOOTH_RX_PIN, BLUETOOTH_TX_PIN);
 
 void setup() {
   bluetoothSerial.begin(9600);
