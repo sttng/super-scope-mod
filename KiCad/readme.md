@@ -5,6 +5,13 @@ The orientation is marked with the USB (top) marker. This is where the Arduino N
 
 ![PCB](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/SimulateReceiver.png)
 
+# Device
+
+![Prototype-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-03.jpg) 
+
+![Prototype-2](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-02.jpg) 
+
+![Prototype-3](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-01.jpg) 
 
 ## BoM
 
