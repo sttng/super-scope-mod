@@ -29,3 +29,5 @@ The orientation is marked with the USB (top) marker. This is where the Arduino N
 An ESP32-S3 Super Mini shield version of the Super Scope Mod. It is supposed to go below an ESP32-S3 Super Mini board. 
 The orientation is marked with the USB (top) marker. This is where the ESP32-S3 Super Mini USB port is supposed to be (on top), with the shield below.
 
+![PCB](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32-S3-SuperScopeMod.png)
+
