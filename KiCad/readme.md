@@ -1,11 +1,11 @@
 # Arduino Nano Shield KiCad 9 files
 
-An Arduino Nano shield version of the Super Scope Mod. It is supposed to go below an Arduino Nano Shield. 
+An Arduino Nano shield version of the Super Scope Mod. It is supposed to go below an Arduino Nano. 
 The orientation is marked with the USB (top) marker. This is where the Arduino Nanos USB port is supposed to be (on top), with the shield below.
 
 ![PCB](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/SimulateReceiver.png)
 
-# Device
+## Device
 
 ![Prototype-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-03.jpg) 
 
@@ -24,5 +24,8 @@ The orientation is marked with the USB (top) marker. This is where the Arduino N
 | IC1         | DIP-16_W7.62mm                                     | 1        | MC14021BCP    |
 | U1          | JEITA_SOIC-8_3.9x4.9mm_P1.27mm                     | 1        | LM1881M       |
 
+# ESP32-S3 Super Mini Shield KiCad 9 files
 
+An ESP32-S3 Super Mini shield version of the Super Scope Mod. It is supposed to go below an ESP32-S3 Super Mini board. 
+The orientation is marked with the USB (top) marker. This is where the ESP32-S3 Super Mini USB port is supposed to be (on top), with the shield below.
 
