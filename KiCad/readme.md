@@ -31,3 +31,14 @@ The orientation is marked with the USB (top) marker. This is where the ESP32-S3 
 
 ![PCB](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32-S3-SuperScopeMod.png)
 
+## BoM
+
+| Designator  | Footprint                                          | Quantity | Description   |
+|-------------|----------------------------------------------------|----------|---------------|
+| J1, J2      | PinSocket_1x09_P2.54mm_Vertical                    | 2        |               |
+| J3          | JST PH 1x02 P2.00mm Horizontal                     | 1        | to Connect to Coax |
+| J4          | Molex_PicoBlade_53048-0610_1x06_P1.25mm_Horizontal | 1        |               |
+| C1,C2,C3,C3 | C_0805_2012Metric_Pad1.18x1.45mm_HandSolder        | 4        | 0.1µF         |
+| R1          | R_0805_2012Metric_Pad1.20x1.40mm_HandSolder        | 1        | 680k          |
+| IC1         | JEITA_SOIC-16_3.9x9.9mm_P1.27mm                    | 1        | CD4021BM96    |
+| U1          | JEITA_SOIC-8_3.9x4.9mm_P1.27mm                     | 1        | LM1881M       |
