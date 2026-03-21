@@ -1317,7 +1317,7 @@
 		(descr "Molex PicoBlade Connector System, 53048-0610, 6 Pins per row (http://www.molex.com/pdm_docs/sd/530480210_sd.pdf), generated with kicad-footprint-generator")
 		(tags "connector Molex PicoBlade horizontal")
 		(property "Reference" "J4"
-			(at 3.176 1.572 270)
+			(at 0.4 1.75 270)
 			(layer "F.SilkS")
 			(uuid "d6ed97c3-75ee-4d62-8b38-34c76f581adc")
 			(effects
@@ -4487,8 +4487,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "(USB top)\n"
-		(at 101.75 95.75 90)
+	(gr_text "USB top\n"
+		(at 103.8 94.86 90)
 		(layer "F.SilkS")
 		(uuid "dec306ae-51e5-4832-9031-53237fb53f24")
 		(effects
