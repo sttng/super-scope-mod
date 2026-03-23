@@ -77,7 +77,7 @@ void loop() {
   }
 }
 
-void handleCompositeSync() {
+void ARDUINO_ISR_ATTR handleCompositeSync() {
   lineCount++;
 
   if (lineCount == aimLine) { 
@@ -88,6 +88,6 @@ void handleCompositeSync() {
   }
 }
 
-void handleVerticalSync() {
+void ARDUINO_ISR_ATTR handleVerticalSync() {
   lineCount = 0;
 }
