@@ -9,8 +9,6 @@ The orientation is marked with the USB (top) marker. This is where the Arduino N
 
 ![Prototype-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-03.jpg) 
 
-![Prototype-2](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-02.jpg) 
-
 ![Prototype-3](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/Nano-Scope-Mod-01.jpg) 
 
 ## BoM
@@ -33,7 +31,7 @@ The orientation is marked with the USB (top) marker. This is where the ESP32-S3 
 
 ## Device
 
-![Prototype-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32S3-Scope-Mod-01.jpg) 
+![Prototype-ESP32-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32S3-Scope-Mod-01.jpg) 
 
 ## BoM
 
