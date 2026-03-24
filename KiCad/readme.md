@@ -31,6 +31,10 @@ The orientation is marked with the USB (top) marker. This is where the ESP32-S3 
 
 ![PCB](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32-S3-SuperScopeMod.png)
 
+## Device
+
+![Prototype-1](https://raw.githubusercontent.com/sttng/super-scope-mod/refs/heads/main/KiCad/ESP32S3-Scope-Mod-01.jpg) 
+
 ## BoM
 
 | Designator  | Footprint                                          | Quantity | Description   |
