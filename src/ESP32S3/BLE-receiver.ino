@@ -3,6 +3,11 @@
 #include <BLEUtils.h>
 #include <BLE2901.h>
 
+#include <WiFi.h>               // This is the most basic WiFi implimentation
+#include "driver/adc.h"         // Allows direct control of ADC for powersaving, can't be <adc.h> for some reason
+#include <esp_bt.h>             // Allows direct API control of BT for powersaving
+#include <esp_wifi.h>           // Provides direct API control of WiFi radio for powersaving
+
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
 #define DEVICE_NAME         "SuperScopeMod_ESP32S3"  
@@ -79,7 +84,34 @@ class MyCharacteristicCallbacks : public BLECharacteristicCallbacks {
 
 void setup() {
   Serial.begin(9600);
+  
+  
+  WiFi.disconnect(true);  // Disconnect from the network
+  WiFi.mode(WIFI_OFF);    // Switch WiFi off
+  esp_wifi_stop();
+  //adc_power_release(); 
 
+  //disableWiFi();
+
+  // Set the CPU frequency to 80 MHz for consumption optimization
+  setCpuFrequencyMhz(80);
+  
+  // Print the XTAL crystal frequency
+  Serial.print("XTAL Crystal Frequency: ");
+  Serial.print(getXtalFrequencyMhz());
+  Serial.println(" MHz");
+
+  // Print the CPU frequency
+  Serial.print("CPU Frequency: ");
+  Serial.print(getCpuFrequencyMhz());
+  Serial.println(" MHz");
+
+  // Print the APB bus frequency
+  Serial.print("APB Bus Frequency: ");
+  Serial.print(getApbFrequency());
+  Serial.println(" Hz");
+  //End CPU frequency change
+  
   pinMode(48, OUTPUT);
 
   // Create the BLE Device
@@ -134,8 +166,8 @@ void setup() {
   digitalWrite(PAUSE_PIN, HIGH);
   digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
 
-  attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
-  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
+  //attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
+  //attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
   // Finished Super Scope Mod Setup
 
   Serial.println("Super Scope Mod BLE receiver started.");
