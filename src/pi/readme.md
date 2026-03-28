@@ -1,4 +1,34 @@
 
+sudo apt-get install python3-pip
+
+python3 -m venv venv
+source venv/bin/activate
+
+
+pip3 install bleak
+
+
+
+#Start Bluetooth Service:
+
+sudo systemctl start bluetooth
+#Unblock Bluetooth (if necessary):
+
+sudo rfkill unblock bluetooth
+
+Activate Power within bluetoothctl:
+#bluetoothctl
+Type power on
+Type agent on
+Type default-agent
+Type exit
+
+
+
+
+/usr/local/bin/bleak-lescan
+
+
 # only Python
 Option 1 - Main modules package: pip install opencv-python 
 
