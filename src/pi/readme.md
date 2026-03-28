@@ -6,6 +6,11 @@ source venv/bin/activate
 
 
 pip3 install bleak
+pip3 install RPi.GPIO
+pip3 install --upgrade imutils
+pip3 install scipy
+
+
 
 
 
