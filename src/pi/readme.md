@@ -17,11 +17,13 @@ pip3 install scipy
 
 
 #Start Bluetooth Service:
-
+```
 sudo systemctl start bluetooth
+```
 #Unblock Bluetooth (if necessary):
-
+```
 sudo rfkill unblock bluetooth
+```
 
 Activate Power within bluetoothctl:
 #bluetoothctl
