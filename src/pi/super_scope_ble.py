@@ -8,7 +8,7 @@ from imutils import perspective
 
 import simplepyble
 
-BLE_ADDRESS = "D0:CF:13:2F:C3:C5"
+BLE_REMOTE_ADDRESS = "D0:CF:13:2F:C3:C5"
 SERVICE_UUID ="4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 DEFAULT_PI_BLE_ADAPTER_IDX = 0
@@ -51,11 +51,8 @@ def on_scan_start():
 def on_scan_stopped():
     print("Scan complete.")
 def on_device_found(peripheral):
-    if(peripheral.address() == BLE_ADDRESS):
+    if(peripheral.address() == BLE_REMOTE_ADDRESS):
         print(f"Found {peripheral.identifier()} [{peripheral.address()}]")
-def on_notification(data):
-    print(f"Notification: {data}")
-
 
 adapters = simplepyble.Adapter.get_adapters()
 if len(adapters) == 0:
@@ -71,7 +68,7 @@ peripherals = adapter.scan_get_results()
 selectedperi = 0
 
 for i, peripheral in enumerate(peripherals):
-    if(peripheral.address() == BLE_ADDRESS):
+    if(peripheral.address() == BLE_REMOTE_ADDRESS):
         selectedperi = peripheral
             
 peripheral = selectedperi
