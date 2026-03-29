@@ -1,6 +1,8 @@
 
 sudo apt-get install python3-pip
 
+https://pimylifeup.com/raspberry-pi-install-lgpio/
+
 ```
 python3 -m venv venv
 source venv/bin/activate
