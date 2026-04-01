@@ -22,7 +22,7 @@ pip3 install simplepyble
 ```
 
 ```
-pip3 install bleak
+//pip3 install bleak
 //pip3 install RPi.GPIO
 pip3 install rpi-lgpio
 pip3 install --upgrade imutils
