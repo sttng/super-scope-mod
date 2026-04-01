@@ -1,4 +1,11 @@
+1) Install OS and updates.
+```
+sudo apt update
+sudo apt full-upgrade
+```
 
+
+2) 
 sudo apt-get install python3-pip
 
 https://pimylifeup.com/raspberry-pi-install-lgpio/
