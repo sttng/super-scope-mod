@@ -1,7 +1,7 @@
 1) Install OS and updates.
 ```
 sudo apt update
-sudo apt full-upgrade
+sudo apt upgrade -y
 ```
 
 
