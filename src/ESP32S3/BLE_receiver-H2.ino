@@ -87,7 +87,7 @@ void setup() {
   pinMode(8, OUTPUT); // Replace  with your LED GPIO
   digitalWrite(8, LOW); // LOW usually turns it off
 
-  // Set the CPU frequency to 48 MHz for consumption optimization
+  // Set the CPU frequency to 32 or 48 MHz for consumption optimization
   setCpuFrequencyMhz(32);
   
   Serial.begin(9600);
