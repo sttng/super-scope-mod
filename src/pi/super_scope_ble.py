@@ -8,7 +8,7 @@ from imutils import perspective
 
 import simplepyble
 
-BLE_REMOTE_ADDRESS = "D0:CF:13:2F:C3:C5"
+BLE_REMOTE_ADDRESS = "74:4D:BD:65:D3:E9" #"D0:CF:13:2F:C3:C5"
 SERVICE_UUID ="4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 DEFAULT_PI_BLE_ADAPTER_IDX = 0
@@ -90,6 +90,7 @@ def handleButtons(channel):
         peripheral.write_request(service_uuid, characteristic_uuid, str.encode(BT_MESSAGE_PAUSE_PRESSED) if isRising else str.encode(BT_MESSAGE_PAUSE_RELEASED))
     elif channel == TRIGGER_BUTTON_PIN:
         peripheral.write_request(service_uuid, characteristic_uuid, str.encode(BT_MESSAGE_TRIGGER_PRESSED) if isRising else str.encode(BT_MESSAGE_TRIGGER_RELEASED))
+        print("Trigger")
     elif channel == CURSOR_BUTTON_PIN:
         peripheral.write_request(service_uuid, characteristic_uuid, str.encode(BT_MESSAGE_CURSOR_PRESSED) if isRising else str.encode(BT_MESSAGE_CURSOR_RELEASED))
 
