@@ -4,13 +4,53 @@ sudo apt update
 sudo apt upgrade -y
 ```
 
+2. Installing the LGPIO Library on the Raspberry Pi
+https://pimylifeup.com/raspberry-pi-install-lgpio/
 
-2) 
+We must ensure that we have all the tools needed to compile the library.
+```
+sudo apt install unzip wget swig build-essential python3-dev python3-setuptools
+```
+
+Go to home dir
+
+```
+cd ~
+```
+
+Download the latest version of the LGPIO library code directly from GitHub
+
+```
+wget https://github.com/joan2937/lg/archive/master.zip
+```
+
+```
+unzip master.zip
+cd lg-master
+```
+
+```
+make
+```
+
+```
+sudo make install
+```
+
+Cleanup
+
+```
+cd
+rm master.zip
+rm -r -f ./lg-master
+```
+
+
+3 .Setup Python Env
+
 ```
 sudo apt-get install python3-pip
 ```
-
-https://pimylifeup.com/raspberry-pi-install-lgpio/
 
 ```
 python3 -m venv venv
