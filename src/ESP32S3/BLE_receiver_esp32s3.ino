@@ -57,9 +57,6 @@ volatile int aimLine = 120; //(maxAimLine - minAimLine + 1) / 2 + minAimLine;
 volatile int aimMicroseconds = 27; //(maxAimMicroseconds - minAimMicroseconds + 1) / 2 + minAimMicroseconds;
 
 volatile int currentLine = 0;
-// Declare the flag as volatile since it's modified inside the ISR
-volatile bool interruptCompositeSyncTriggered = false;
-volatile bool interruptVerticalSyncTriggered = false;
 
 
 
@@ -178,30 +175,11 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
   // Finished Super Scope Mod Setup
 
-  Serial.println("Super Scope Mod BLE receiver started.");
+  Serial.println("Super Scope Mod-S3 BLE receiver started.");
 
 }
 
 void loop() {
-
-  if (interruptCompositeSyncTriggered) {
-    //if (isTvVisible && currentLine == aimLine) {
-    if (currentLine == aimLine) { 
-      delayMicroseconds(aimMicroseconds);
-      digitalWrite(EXTERNAL_LATCH_PIN, LOW);
-      delayMicroseconds(5);
-      digitalWrite(EXTERNAL_LATCH_PIN, HIGH);  
-    }
-    
-    // Reset the flag and re-attach the interrupt
-    interruptCompositeSyncTriggered = false;
-    attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);  
-  }
-
-  if (interruptVerticalSyncTriggered) {
-    interruptVerticalSyncTriggered = false;
-    attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
-  }
 
   // Process commands when a device is connected.
   if (deviceConnected && pCharacteristic->getValue().length() > 0) {
@@ -288,16 +266,14 @@ void loop() {
 
 void ARDUINO_ISR_ATTR handleCompositeSync() {
   currentLine++;
-  interruptCompositeSyncTriggered = true; // Set a flag. DO NOT do heavy processing here!
-  
-  // Disable interrupt temporarily if you need to perform actions safely
-  detachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN));
+  //if (isTvVisible && currentLine == aimLine) {
+  if (currentLine == aimLine) {
+    delayMicroseconds(aimMicroseconds);
+    digitalWrite(EXTERNAL_LATCH_PIN, LOW);
+    digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
+  }
 }
 
 void ARDUINO_ISR_ATTR handleVerticalSync() {
   currentLine = 0;
-  interruptVerticalSyncTriggered = true; // Set a flag. DO NOT do heavy processing here!
-
-  // Disable interrupt temporarily if you need to perform actions safely
-  detachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN));
 }
