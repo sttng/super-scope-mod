@@ -42,8 +42,8 @@ void setup() {
   digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
 
   attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
-  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING) ;
-}
+  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
+  }
 
 void loop() {
   if (Serial.available() > 0) {
@@ -70,7 +70,6 @@ void loop() {
         digitalWrite(TRIGGER_PIN, LOW);
         delay(250);
         digitalWrite(TRIGGER_PIN, HIGH);
-
         Serial.println("Trigger pressed.");
         break;
     }
@@ -79,7 +78,6 @@ void loop() {
 
 void ARDUINO_ISR_ATTR handleCompositeSync() {
   lineCount++;
-
   if (lineCount == aimLine) { 
     delayMicroseconds(aimMicroseconds);
     digitalWrite(EXTERNAL_LATCH_PIN, LOW);
