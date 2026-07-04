@@ -42,7 +42,7 @@ void setup() {
   digitalWrite(EXTERNAL_LATCH_PIN, HIGH);
 
   attachInterrupt(digitalPinToInterrupt(COMPOSITE_SYNC_PIN), handleCompositeSync, RISING);
-  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING) ;
+  attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
 }
 
 void loop() {
@@ -70,7 +70,6 @@ void loop() {
         digitalWrite(TRIGGER_PIN, LOW);
         delay(250);
         digitalWrite(TRIGGER_PIN, HIGH);
-
         Serial.println("Trigger pressed.");
         break;
     }
