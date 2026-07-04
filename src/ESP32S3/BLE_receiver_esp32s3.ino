@@ -175,7 +175,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(VERTICAL_SYNC_PIN), handleVerticalSync, RISING);
   // Finished Super Scope Mod Setup
 
-  Serial.println("Super Scope Mod-S3 BLE receiver started.");
+  Serial.println("Super Scope Mod-esp32s3 BLE receiver started.");
 
 }
 
