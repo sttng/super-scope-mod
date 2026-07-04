@@ -79,7 +79,6 @@ void loop() {
 
 void ARDUINO_ISR_ATTR handleCompositeSync() {
   lineCount++;
-
   if (lineCount == aimLine) { 
     delayMicroseconds(aimMicroseconds);
     digitalWrite(EXTERNAL_LATCH_PIN, LOW);
